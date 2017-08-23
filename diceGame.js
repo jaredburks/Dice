@@ -18,7 +18,7 @@ function fourSide(){
 
 	//console.log(dice);//Gives answer
 
-	for(var i = 0; i <= 2; i++){
+	for(var i = 1; i <= 2; i++){
 		var playerGuess = parseInt(prompt("Guess a number between 1 & 4:"));
 		if(playerGuess === dice){
 			console.log("Lucky Guess! You Win!");
@@ -31,7 +31,17 @@ function fourSide(){
 		else{
 			console.log("You lose Jabroni");
 			alert("You lose Jabroni");
+			displayLost();
 		}
 	}
 }
 fourSide();
+
+function displayLost(){
+	var x = document.createElement("IMG");
+	x.setAttribute("src", "forgot.jpg");
+	x.setAttribute("width", "400");
+	x.setAttribute("height", "300");
+	x.setAttribute("alt", "Troll Face");
+	document.body.appendChild(x);
+}
