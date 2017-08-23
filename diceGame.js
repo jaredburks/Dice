@@ -35,7 +35,7 @@ function startGame(){
 			playTwentySide();
 			break;
 		default:
-			resetPage();
+			location.reload();
 	}
 }
 
@@ -231,7 +231,7 @@ function displayWin(){
 	document.body.appendChild(winPic);
 }
 
-function makeButton(){
+function playButton(){
 	//Create button
 	var button = document.createElement("button");
 	button.innerHTML = "Play Game";
@@ -240,13 +240,15 @@ function makeButton(){
 	body.appendChild(button);
 	//Button Starts Game
 	button.addEventListener("click", function(){
-
+		resetPage();
 		startGame();
 	});
 }
 
 function resetPage(){
-	location.reload(true);
+	var body = document.getElementsByTagName("body")[0]
+	document.body.removeChild(body.lastChild);
+	//location.reload(true);
 }
 
-makeButton();
+playButton();
