@@ -1,4 +1,4 @@
-//Dice game where you guess the number on the dice
+//Dice game where you guess the number on the dice thats rolled
 
 //Game starts:Pick one of the 5 dice to play with
 //Dice rolls: you get a certain amount of guesses based on the dice's sides
@@ -7,13 +7,13 @@
 //Run out of guesses, you lose.
 
 function startGame(){
-	var four = "Enter 1 for 4-sided Dice"
-	var six = "Enter 2 for 6-sided Dice"
-	var eight = "Enter 3 for 8-sided Dice"
-	var ten = "Enter 4 for 10-sided Dice"
-	var twelve = "Enter 5 for 12-sided Dice"
-	var twenty = "Enter 6 for 20-sided Dice"
-	var option = parseInt(prompt("Please select which dice you want to play with:\n\r"+four+"\n\r"+six+"\n\r"+eight+"\n\r"+ten+"\n\r"+twelve+"\n\r"+twenty+""));
+	var four = "Enter 1 for 4-sided Dice - You get 2 guesses"
+	var six = "Enter 2 for 6-sided Dice - You get 3 guesses"
+	var eight = "Enter 3 for 8-sided Dice - You get 4 guesses"
+	var ten = "Enter 4 for 10-sided Dice - You get 5 guesses"
+	var twelve = "Enter 5 for 12-sided Dice - You get 6 guesses"
+	var twenty = "Enter 6 for 20-sided Dice - You get 10 guesses"
+	var option = parseInt(prompt("Guessing Game! Please select which dice you want to play with:\n\r"+four+"\n\r"+six+"\n\r"+eight+"\n\r"+ten+"\n\r"+twelve+"\n\r"+twenty+""));
 
 	switch(option){
 		case 1:
