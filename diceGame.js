@@ -22,7 +22,9 @@ function fourSide(){
 		var playerGuess = parseInt(prompt("Guess a number between 1 & 4:"));
 		if(playerGuess === dice){
 			console.log("Lucky Guess! You Win!");
+			displayWin();
 			return alert("Lucky Guess! You Win!");
+
 		}
 		else if(i < 2){
 			console.log("Nope! Try Again");
@@ -39,9 +41,18 @@ fourSide();
 
 function displayLost(){
 	var x = document.createElement("IMG");
-	x.setAttribute("src", "forgot.jpg");
+	x.setAttribute("src", "youlose.gif");
 	x.setAttribute("width", "400");
 	x.setAttribute("height", "300");
-	x.setAttribute("alt", "Troll Face");
+	x.setAttribute("alt", "Guy Smashing PC");
+	document.body.appendChild(x);
+}
+
+function displayWin(){
+	var x = document.createElement("IMG");
+	x.setAttribute("src", "youwin.gif");
+	x.setAttribute("width", "400");
+	x.setAttribute("height", "300");
+	x.setAttribute("alt", "Guy Nodding");
 	document.body.appendChild(x);
 }
