@@ -59,6 +59,7 @@ function playFourSide(){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
 			alert("Lucky Guess! You Win!");
+			break;
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -86,6 +87,7 @@ function playSixSide(){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
 			alert("Lucky Guess! You Win!");
+			break;
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -113,6 +115,7 @@ function playEightSide(){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
 			alert("Lucky Guess! You Win!");
+			break;
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -140,6 +143,7 @@ function playTenSide(){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
 			alert("Lucky Guess! You Win!");
+			break;
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -167,6 +171,7 @@ function playTwelveSide(){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
 			alert("Lucky Guess! You Win!");
+			break;
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -194,6 +199,7 @@ function playTwentySide(){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
 			alert("Lucky Guess! You Win!");
+			break;
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -234,6 +240,7 @@ function makeButton(){
 	body.appendChild(button);
 	//Button Starts Game
 	button.addEventListener("click", function(){
+
 		startGame();
 	});
 }
