@@ -6,7 +6,40 @@
 //If you guess wrong, try again.
 //Run out of guesses, you lose.
 
-function fourSide(){
+function startGame(){
+	var four = "Enter 1 for 4-sided Dice"
+	var six = "Enter 2 for 4-sided Dice"
+	var eight = "Enter 3 for 4-sided Dice"
+	var ten = "Enter 4 for 4-sided Dice"
+	var twelve = "Enter 5 for 4-sided Dice"
+	var twenty = "Enter 6 for 4-sided Dice"
+	var option = parseInt(prompt("Please select which dice you want to play with:\n\r"+four+"\n\r"+six+"\n\r"+eight+"\n\r"+ten+"\n\r"+twelve+"\n\r"+twenty+""));
+
+	switch(option){
+		case 1:
+			playFourSide();
+			break;
+		case 2:
+			playSixSide();
+			break;
+		case 3:
+			playEightSide();
+			break;
+		case 4:
+			playTenSide();
+			break;
+		case 5:
+			playTwelveSide();
+			break;
+		case 6:
+			playTwentySide();
+			break;
+		default:
+			resetPage();
+	}
+}
+
+function playFourSide(){
 	//dice needs to roll and have value saved
 	//need to have user guess the number and keep track of guesses
 	//for(var i = 1; i <= 2; i++ )
@@ -25,8 +58,7 @@ function fourSide(){
 		if(playerGuess === diceRoll){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
-			return alert("Lucky Guess! You Win!");
-
+			alert("Lucky Guess! You Win!");
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -40,7 +72,7 @@ function fourSide(){
 	}
 }
 
-function sixSide(){
+function playSixSide(){
 	var diceSides = 6;
 	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
 	var guesses = diceSides / 2;
@@ -53,8 +85,7 @@ function sixSide(){
 		if(playerGuess === diceRoll){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
-			return alert("Lucky Guess! You Win!");
-
+			alert("Lucky Guess! You Win!");
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -68,7 +99,7 @@ function sixSide(){
 	}
 }
 
-function eightSide(){
+function playEightSide(){
 	var diceSides = 8;
 	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
 	var guesses = diceSides / 2;
@@ -81,8 +112,7 @@ function eightSide(){
 		if(playerGuess === diceRoll){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
-			return alert("Lucky Guess! You Win!");
-
+			alert("Lucky Guess! You Win!");
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -96,7 +126,7 @@ function eightSide(){
 	}
 }
 
-function tenSide(){
+function playTenSide(){
 	var diceSides = 10;
 	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
 	var guesses = diceSides / 2;
@@ -109,8 +139,7 @@ function tenSide(){
 		if(playerGuess === diceRoll){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
-			return alert("Lucky Guess! You Win!");
-
+			alert("Lucky Guess! You Win!");
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -124,7 +153,7 @@ function tenSide(){
 	}
 }
 
-function twelveSide(){
+function playTwelveSide(){
 	var diceSides = 12;
 	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
 	var guesses = diceSides / 2;
@@ -137,8 +166,7 @@ function twelveSide(){
 		if(playerGuess === diceRoll){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
-			return alert("Lucky Guess! You Win!");
-
+			alert("Lucky Guess! You Win!");
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -152,7 +180,7 @@ function twelveSide(){
 	}
 }
 
-function twentySide(){
+function playTwentySide(){
 	var diceSides = 20;
 	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
 	var guesses = diceSides / 2;
@@ -165,8 +193,7 @@ function twentySide(){
 		if(playerGuess === diceRoll){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
-			return alert("Lucky Guess! You Win!");
-
+			alert("Lucky Guess! You Win!");
 		}
 		else if(i < guesses){
 			console.log("Nope! Try Again");
@@ -197,3 +224,22 @@ function displayWin(){
 	x.setAttribute("alt", "Guy Nodding");
 	document.body.appendChild(x);
 }
+
+function makeButton(){
+	//Create button
+	var button = document.createElement("button");
+	button.innerHTML = "Play Game";
+	//Set button in body
+	var body = document.getElementsByTagName("body")[0];
+	body.appendChild(button);
+	//Button Starts Game
+	button.addEventListener("click", function(){
+		startGame();
+	});
+}
+
+function resetPage(){
+	location.reload(true);
+}
+
+makeButton();
