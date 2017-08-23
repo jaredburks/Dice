@@ -241,14 +241,13 @@ function playButton(){
 	//Button Starts Game
 	button.addEventListener("click", function(){
 		resetPage();
-		startGame();
+		setTimeout(function(){startGame()}, 1.0);
 	});
 }
 
 function resetPage(){
 	var body = document.getElementsByTagName("body")[0]
 	document.body.removeChild(body.lastChild);
-	//location.reload(true);
 }
 
 playButton();
