@@ -8,11 +8,11 @@
 
 function startGame(){
 	var four = "Enter 1 for 4-sided Dice"
-	var six = "Enter 2 for 4-sided Dice"
-	var eight = "Enter 3 for 4-sided Dice"
-	var ten = "Enter 4 for 4-sided Dice"
-	var twelve = "Enter 5 for 4-sided Dice"
-	var twenty = "Enter 6 for 4-sided Dice"
+	var six = "Enter 2 for 6-sided Dice"
+	var eight = "Enter 3 for 8-sided Dice"
+	var ten = "Enter 4 for 10-sided Dice"
+	var twelve = "Enter 5 for 12-sided Dice"
+	var twenty = "Enter 6 for 20-sided Dice"
 	var option = parseInt(prompt("Please select which dice you want to play with:\n\r"+four+"\n\r"+six+"\n\r"+eight+"\n\r"+ten+"\n\r"+twelve+"\n\r"+twenty+""));
 
 	switch(option){
@@ -208,21 +208,21 @@ function playTwentySide(){
 }
 
 function displayLost(){
-	var x = document.createElement("IMG");
-	x.setAttribute("src", "youlose.gif");
-	x.setAttribute("width", "400");
-	x.setAttribute("height", "300");
-	x.setAttribute("alt", "Guy Smashing PC");
-	document.body.appendChild(x);
+	var losePic = document.createElement("IMG");
+	losePic.setAttribute("src", "youlose.gif");
+	losePic.setAttribute("width", "400");
+	losePic.setAttribute("height", "300");
+	losePic.setAttribute("alt", "Guy Smashing PC");
+	document.body.appendChild(losePic);
 }
 
 function displayWin(){
-	var x = document.createElement("IMG");
-	x.setAttribute("src", "youwin.gif");
-	x.setAttribute("width", "400");
-	x.setAttribute("height", "300");
-	x.setAttribute("alt", "Guy Nodding");
-	document.body.appendChild(x);
+	var winPic = document.createElement("IMG");
+	winPic.setAttribute("src", "youwin.gif");
+	winPic.setAttribute("width", "400");
+	winPic.setAttribute("height", "300");
+	winPic.setAttribute("alt", "Guy Nodding");
+	document.body.appendChild(winPic);
 }
 
 function makeButton(){
