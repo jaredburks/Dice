@@ -241,7 +241,7 @@ function playButton(){
 	//Button Starts Game
 	button.addEventListener("click", function(){
 		resetPage();
-		setTimeout(function(){startGame()}, 1.0);
+		setTimeout(function(){startGame()}, 2.0);
 	});
 }
 
