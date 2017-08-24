@@ -1,3 +1,4 @@
+"use strict"
 //Dice game where you guess the number on the dice thats rolled
 
 //Game starts:Pick one of the 5 dice to play with
