@@ -238,7 +238,7 @@ function playButton(){
 	//Set button in body
 	var body = document.getElementsByTagName("body")[0];
 	body.appendChild(button);
-	//Button Starts Game
+	//Button Clears Body elements(gif) then Starts Game
 	button.addEventListener("click", function(){
 		resetPage();
 		setTimeout(function(){startGame()}, 20);

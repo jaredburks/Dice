@@ -1,0 +1,6 @@
+.backgroundIndex{
+	background-image: url("redDice.jpg");
+	background-repeat: no-repeat;
+	background-position: relative;
+	background-size: cover;
+}
