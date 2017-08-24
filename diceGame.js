@@ -17,7 +17,9 @@ function startGame(){
 
 	switch(option){
 		case 1:
-			playFourSide();
+			diceSound();
+			disableButton();
+			setTimeout(function(){playFourSide()}, 2000)//playFourSide()
 			break;
 		case 2:
 			playSixSide();
@@ -220,6 +222,8 @@ function displayLost(){
 	losePic.setAttribute("height", "300");
 	losePic.setAttribute("alt", "Guy Smashing PC");
 	document.body.appendChild(losePic);
+	loseSound();
+	enableButton();
 }
 
 function displayWin(){
@@ -229,14 +233,39 @@ function displayWin(){
 	winPic.setAttribute("height", "300");
 	winPic.setAttribute("alt", "Guy Nodding");
 	document.body.appendChild(winPic);
+	winSound();
+	enableButton();
 }
 
 function playButton(){
-		resetPage();
-		setTimeout(function(){startGame()}, 20);
+	resetPage();
+	setTimeout(function(){startGame()}, 20);
 }
 
 function resetPage(){
 	var body = document.getElementsByTagName("body")[0]
 	document.body.removeChild(body.lastChild);
+}
+
+function diceSound(){
+	var audio = new Audio('diceSound.mp3');
+	audio.play();
+}
+
+function winSound(){
+	var audio = new Audio('applause2.mp3');
+	audio.play();
+}
+
+function loseSound(){
+	var audio = new Audio('darkness.mp3');
+	audio.play();
+}
+
+function disableButton(){
+	document.getElementById("gameOn").disabled = true;
+}
+
+function enableButton(){
+	document.getElementById("gameOn").disabled = false;
 }
