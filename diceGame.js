@@ -7,206 +7,39 @@
 //Run out of guesses, you lose.
 
 function startGame(){
-	var four = "Enter 1 for 4-sided Dice - You get 2 guesses"
-	var six = "Enter 2 for 6-sided Dice - You get 3 guesses"
-	var eight = "Enter 3 for 8-sided Dice - You get 4 guesses"
-	var ten = "Enter 4 for 10-sided Dice - You get 5 guesses"
-	var twelve = "Enter 5 for 12-sided Dice - You get 6 guesses"
-	var twenty = "Enter 6 for 20-sided Dice - You get 10 guesses"
+	var four = "Enter 4 for 4-sided Dice - You get 2 guesses"
+	var six = "Enter 6 for 6-sided Dice - You get 3 guesses"
+	var eight = "Enter 8 for 8-sided Dice - You get 4 guesses"
+	var ten = "Enter 10 for 10-sided Dice - You get 5 guesses"
+	var twelve = "Enter 12 for 12-sided Dice - You get 6 guesses"
+	var twenty = "Enter 20 for 20-sided Dice - You get 10 guesses"
 	var option = parseInt(prompt("Guessing Game! Please select which dice you want to play with:\n\r"+four+"\n\r"+six+"\n\r"+eight+"\n\r"+ten+"\n\r"+twelve+"\n\r"+twenty+""));
 
-	switch(option){
-		case 1:
-			diceSound();
-			disableButton();
-			setTimeout(function(){playFourSide()}, 2000)
-			break;
-		case 2:
-			diceSound();
-			disableButton();
-			setTimeout(function(){playSixSide()}, 2000)
-			break;
-		case 3:
-			diceSound();
-			disableButton();
-			setTimeout(function(){playEightSide()}, 2000)
-			break;
-		case 4:
-			diceSound();
-			disableButton();
-			setTimeout(function(){playTenSide()}, 2000)
-			break;
-		case 5:
-			diceSound();
-			disableButton();
-			setTimeout(function(){playTwelveSide()}, 2000)
-			break;
-		case 6:
-			diceSound();
-			disableButton();
-			setTimeout(function(){playTwentySide()}, 2000)
-			break;
-		default:
-			location.reload();
+	if(option === 4 || option === 6 || option === 8 || option === 10 || option === 12 || option === 20){
+		diceSound();
+		disableButton();
+		setTimeout(function(){playDice(option)}, 2000)
+	}
+	else{
+		location.reload();
 	}
 }
 
-function playFourSide(){
+function playDice(diceSides){
 	//dice needs to roll and have value saved
 	//need to have user guess the number and keep track of guesses
 	//for(var i = 1; i <= 2; i++ )
 		//if(playerGuess === dice value) you win
 		//else try again
 	//you lose guy
-	var diceSides = 4;
 	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
 	var guesses = diceSides / 2;
-	var note = console.log("You've selected the 4 sided dice.");
+	var note = console.log("You've selected the "+diceSides+" sided dice.");
 
 	//console.log(dice);//Gives answer
 
 	for(var i = 1; i <= guesses; i++){
-		var playerGuess = parseInt(prompt("Guess a number between 1 & 4:"));
-		if(playerGuess === diceRoll){
-			console.log("Lucky Guess! You Win!");
-			displayWin();
-			alert("Lucky Guess! You Win!");
-			break;
-		}
-		else if(i < guesses){
-			console.log("Nope! Try Again");
-			alert("Nope! Try Again");
-		}
-		else{
-			console.log("You lose Jabroni");
-			alert("You lose Jabroni");
-			displayLost();
-		}
-	}
-}
-
-function playSixSide(){
-	var diceSides = 6;
-	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
-	var guesses = diceSides / 2;
-	var note = console.log("You've selected the 6 sided dice.");
-
-	//console.log(dice);//Gives answer
-
-	for(var i = 1; i <= guesses; i++){
-		var playerGuess = parseInt(prompt("Guess a number between 1 & 6:"));
-		if(playerGuess === diceRoll){
-			console.log("Lucky Guess! You Win!");
-			displayWin();
-			alert("Lucky Guess! You Win!");
-			break;
-		}
-		else if(i < guesses){
-			console.log("Nope! Try Again");
-			alert("Nope! Try Again");
-		}
-		else{
-			console.log("You lose Jabroni");
-			alert("You lose Jabroni");
-			displayLost();
-		}
-	}
-}
-
-function playEightSide(){
-	var diceSides = 8;
-	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
-	var guesses = diceSides / 2;
-	var note = console.log("You've selected the 8 sided dice.");
-
-	//console.log(dice);//Gives answer
-
-	for(var i = 1; i <= guesses; i++){
-		var playerGuess = parseInt(prompt("Guess a number between 1 & 8:"));
-		if(playerGuess === diceRoll){
-			console.log("Lucky Guess! You Win!");
-			displayWin();
-			alert("Lucky Guess! You Win!");
-			break;
-		}
-		else if(i < guesses){
-			console.log("Nope! Try Again");
-			alert("Nope! Try Again");
-		}
-		else{
-			console.log("You lose Jabroni");
-			alert("You lose Jabroni");
-			displayLost();
-		}
-	}
-}
-
-function playTenSide(){
-	var diceSides = 10;
-	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
-	var guesses = diceSides / 2;
-	var note = console.log("You've selected the 10 sided dice.");
-
-	//console.log(dice);//Gives answer
-
-	for(var i = 1; i <= guesses; i++){
-		var playerGuess = parseInt(prompt("Guess a number between 1 & 10:"));
-		if(playerGuess === diceRoll){
-			console.log("Lucky Guess! You Win!");
-			displayWin();
-			alert("Lucky Guess! You Win!");
-			break;
-		}
-		else if(i < guesses){
-			console.log("Nope! Try Again");
-			alert("Nope! Try Again");
-		}
-		else{
-			console.log("You lose Jabroni");
-			alert("You lose Jabroni");
-			displayLost();
-		}
-	}
-}
-
-function playTwelveSide(){
-	var diceSides = 12;
-	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
-	var guesses = diceSides / 2;
-	var note = console.log("You've selected the 12 sided dice.");
-
-	//console.log(dice);//Gives answer
-
-	for(var i = 1; i <= guesses; i++){
-		var playerGuess = parseInt(prompt("Guess a number between 1 & 12:"));
-		if(playerGuess === diceRoll){
-			console.log("Lucky Guess! You Win!");
-			displayWin();
-			alert("Lucky Guess! You Win!");
-			break;
-		}
-		else if(i < guesses){
-			console.log("Nope! Try Again");
-			alert("Nope! Try Again");
-		}
-		else{
-			console.log("You lose Jabroni");
-			alert("You lose Jabroni");
-			displayLost();
-		}
-	}
-}
-
-function playTwentySide(){
-	var diceSides = 20;
-	var diceRoll = Math.floor((Math.random() * diceSides) + 1);
-	var guesses = diceSides / 2;
-	var note = console.log("You've selected the 20 sided dice.");
-
-	//console.log(dice);//Gives answer
-
-	for(var i = 1; i <= guesses; i++){
-		var playerGuess = parseInt(prompt("Guess a number between 1 & 20:"));
+		var playerGuess = parseInt(prompt("Guess a number between 1 & "+diceSides+":"));
 		if(playerGuess === diceRoll){
 			console.log("Lucky Guess! You Win!");
 			displayWin();
