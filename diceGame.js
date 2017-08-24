@@ -19,22 +19,32 @@ function startGame(){
 		case 1:
 			diceSound();
 			disableButton();
-			setTimeout(function(){playFourSide()}, 2000)//playFourSide()
+			setTimeout(function(){playFourSide()}, 2000)
 			break;
 		case 2:
-			playSixSide();
+			diceSound();
+			disableButton();
+			setTimeout(function(){playSixSide()}, 2000)
 			break;
 		case 3:
-			playEightSide();
+			diceSound();
+			disableButton();
+			setTimeout(function(){playEightSide()}, 2000)
 			break;
 		case 4:
-			playTenSide();
+			diceSound();
+			disableButton();
+			setTimeout(function(){playTenSide()}, 2000)
 			break;
 		case 5:
-			playTwelveSide();
+			diceSound();
+			disableButton();
+			setTimeout(function(){playTwelveSide()}, 2000)
 			break;
 		case 6:
-			playTwentySide();
+			diceSound();
+			disableButton();
+			setTimeout(function(){playTwentySide()}, 2000)
 			break;
 		default:
 			location.reload();
@@ -258,7 +268,7 @@ function winSound(){
 }
 
 function loseSound(){
-	var audio = new Audio('darkness.mp3');
+	var audio = new Audio('darkness.wav');
 	audio.play();
 }
 
