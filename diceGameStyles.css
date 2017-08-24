@@ -4,3 +4,9 @@
 	background-position: relative;
 	background-size: cover;
 }
+
+button{
+	display: block;
+	margin: auto;
+	width: 10%;
+}
