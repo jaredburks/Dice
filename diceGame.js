@@ -61,7 +61,7 @@ function playDice(diceSides){
 
 function displayLost(){
 	var losePic = document.createElement("IMG");
-	losePic.setAttribute("src", "youlose.gif");
+	losePic.setAttribute("src", "images/youlose.gif");
 	losePic.setAttribute("width", "400");
 	losePic.setAttribute("height", "300");
 	losePic.setAttribute("alt", "Guy Smashing PC");
@@ -72,7 +72,7 @@ function displayLost(){
 
 function displayWin(){
 	var winPic = document.createElement("IMG");
-	winPic.setAttribute("src", "youwin.gif");
+	winPic.setAttribute("src", "images/youwin.gif");
 	winPic.setAttribute("width", "400");
 	winPic.setAttribute("height", "300");
 	winPic.setAttribute("alt", "Guy Nodding");
@@ -92,17 +92,17 @@ function resetPage(){
 }
 
 function diceSound(){
-	var audio = new Audio('diceSound.mp3');
+	var audio = new Audio('audio/diceSound.mp3');
 	audio.play();
 }
 
 function winSound(){
-	var audio = new Audio('applause2.mp3');
+	var audio = new Audio('audio/applause2.mp3');
 	audio.play();
 }
 
 function loseSound(){
-	var audio = new Audio('darkness.wav');
+	var audio = new Audio('audio/darkness.wav');
 	audio.play();
 }
 
